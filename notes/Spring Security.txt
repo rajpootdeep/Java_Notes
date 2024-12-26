@@ -1,0 +1,61 @@
+---------------------------------------------------Spring Security---------------------------------------------
+Spring Security defines a framework for security.
+
+Implemented using servlet filters in the background
+
+Two methods of securing an app : declarative and programmatic
+
+Declarative - define app security constraints in configuration class, 
+
+Programatic - Spring Security provides an API for custom application coding.
+
+Spring provide a bulk of security functionality with servlet filters
+
+
+--> If Spring Security is on the classpath, Spring Boot automatically secures all HTTP endpoints with “basic” authentication. However, you can further customize the security settings, Spring Security provides a filter that intercepts that request and authenticates the user.
+
+-> @EnableWebSecurity - Annotate WebSecurityConfig  class to enable spring security's web security support and provide spring MVC integration, it will tell to spring that it is security class
+
+-> SecurityFilterChain - this bean defines which URL path should be secured and which should not, first spring look for bean type of SecurityFilterChanin
+
+-> UserDetailsService bean setup an in-memory user store.
+
+
+=============================================================================================================================
+#For DB Creds
+
+AuthenticationProvider - it is having authenticate() method, we implement our custom authentication logic, and second method it has is support() , this is used to 			provide true if Authentication Provider supports the type of the Authentication object.
+ 
+DaoAuthenticationProvider (Default authentication provider )
+
+UserDetailsManger - 
+			InMemoryUserDetailsManger - for in memory user  creds
+
+			JdbcUserDetailsManager - provoke us to use default db schema.
+			
+			CustomUserDetailsService  - Implement it and override LoadUserByUserName
+
+Authen
+
+------------------------------------------------- Get User details of current authenticated user ---------------------------------------------------------------
+
+
+org.springframework.security.core.userdetails.User authenticatedUser =
+                (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+Inside Spring Security authentication and authorization related execeptions are handled by ExceptionTranslationFilter 
+
+JWT Token - JWTs are self-contained tokens that consist of three parts separated by period (.) encoded in Base64 URL
+	1. Header
+	2. Payload
+	3. Signature (Optional) - HMACSH256(base64UrlEncode(header) . bas64UrlEncode(payload),secret
+It is in Json format, it used for both authentication and authorization
+
+Advantages of Token
+. Limited expose of the user credentials inside the network
+. Only once the user have to enter credentials after for any request only token is going to be travel inside network
+. Expiration can be set for time period
+. Reusability, generate token for app, can used for different app as well, this behaviour is called SSO (Single Sign on)
+. Statelessness

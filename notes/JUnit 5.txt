@@ -1,0 +1,50 @@
+
+
+@DirtiesContext - it rollback the data after method execution completed
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+we can use @Order annotation 
+junit-platform.prperties file ;
+
+junit.jupiter.testclass.order.default=org.junit.jupiter.api.ClassOrderer$orderAnnotation
+									. ...
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+@TestInstance(LifeCycle.PER_CLASS/LifeCycle.PER_METHOD)  - Modify the life cycle of test class
+
+LifeCycle.PER_CLASS - creates a single instance of the test class for all test methods
+
+@ExtendWith(MockitoExtension.class) - 
+
+@Mock -
+
+@InjectMocks - 
+
+@SpringBootTest  - annotation boststraps the entire container, create application context
+
+@LocalServerPort - pick the actual port no, on wich embeded server is running and assign to member variable
+
+
+@DataJpaTest - create Application Context with JPA-related components only, By default , test method is Transactional and will rollback when completes, By default in-memory database is used
+
+
+
+
+
+
+###########################################################################################################################################################
+
+---------------------------------------------------------------------  BDD -------------------------------------------------------------------------------------
+
+Features files are something which contains Gherkin scenarios
+
+
+
+Feature: about whole file
+
+@CucumberOptions(features = { "C:\\Users\\HP\\eclipse-workspace\\cucumber1\\Features" }, glue = {
+		"com.deep.bdd.steps" },plugin= {"pretty","html:Report1"}, dryRun = false, monochrome = true,tags = "@Tag2",name= {"--keyword--"})

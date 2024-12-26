@@ -1,0 +1,358 @@
+API key
+4Rv4T8pE05bIh3EYnznd6O2eJ
+
+API key secret 
+faFw3fw7krCDR1cxfwQVjmAhb9k2cAMbhFRouOPc93s8bp61ub
+
+
+Bearer
+
+AAAAAAAAAAAAAAAAAAAAAO5MqwEAAAAA60L1NNdRrY80PN%2Biix%2BriITOXc0%3DaZj62NJUEpN45HslRT55noPhlDdnDFQHuNbYCCJcPDvUZIgqc7
+
+
+
+
+client id 
+aTV4XzZxR2xXM3NaTDNORkgtUk86MTpjaQ
+
+client secret 
+cujAVb9p4FUlM5dbqZ01Jay9VshheSKSFKp817rkon1tNx1VNU
+
+cujAVb9p4FUlM5dbqZ01Jay9VshheSKSFKp817rkon1tNx1VNU
+--------------------------------------------------------------   MySQL Stored Procedure  - ----------------------------------------------------
+
+delimiter //
+
+
+
+
+
+
+
+begin 
+
+ 
+declare count int default 0;
+
+
+declare action handler conditional value
+
+begin
+
+stt
+
+end;
+
+
+
+
+stt
+
+end//
+delimiter ;
+
+set @io=10;
+call p_name(1,@O,@io);
+
+
+==================
+
+
+DECLARE handler_action HANDLER
+    FOR condition_value [, condition_value] ...
+    statement
+
+handler_action: {
+    CONTINUE
+  | EXIT
+  | UNDO
+}
+
+condition_value: {
+    mysql_error_code
+  | SQLSTATE [VALUE] sqlstate_value
+  | condition_name
+  | SQLWARNING
+  | NOT FOUND
+  | SQLEXCEPTION
+}
+
+===========================
+IF search_condition THEN statement_list
+    [ELSEIF search_condition THEN statement_list] ...
+    [ELSE statement_list]
+END IF;
+
+
+
+DELIMITER //
+
+CREATE FUNCTION VerboseCompare (n INT, m INT)
+  RETURNS VARCHAR(50)
+
+  BEGIN
+    DECLARE s VARCHAR(50);
+
+    IF n = m THEN SET s = 'equals';
+    ELSE
+      IF n > m THEN SET s = 'greater';
+      ELSE SET s = 'less';
+      END IF;
+
+      SET s = CONCAT('is ', s, ' than');
+    END IF;
+
+    SET s = CONCAT(n, ' ', s, ' ', m, '.');
+
+    RETURN s;
+  END //
+
+DELIMITER ;
+
+======================
+
+CREATE PROCEDURE dowhile()
+BEGIN
+  DECLARE v1 INT DEFAULT 5;
+
+  WHILE v1 > 0    DO
+    ...
+    SET v1 = v1 - 1;
+
+
+  END WHILE;
+END;
+
+===============
+nme: loop
+
+leave name;
+
+end loop;
+
+=================
+
+DECLARE cursor_name CURSOR FOR select_statement;
+
+declare continue handler for not found set falg :=true;
+
+open cursor_name
+
+fetch cursor_name int a, .....;
+
+close cursor_name;
+
+===========================
+
+case [value]
+when ----  then ----;
+when...
+
+end case;
+
+  
+
+
+
+
+-----------------------------------------------------------------------------------  JDBC  --------------------------------------------------------------------
+
+protocol:subprotocol:subname
+
+jdbc:mysql://localhost:3308:/app
+
+
+
+1. Conection con=DriverManager.getConnection(url,user,pass);
+
+2. Statement st=con.createStatement();
+3. ReultSet resultSet=st.executeQuery(simple_queury);
+while(resultSet.next())
+{
+int id= resultSet.getInt("id");
+}
+
+con.close(); // at last
+
+2. PreparedStatement pst=con.PrepareStatement("insert into test(id,firstName) values(?,?)");
+pst.setInt(1,5);
+pst.setString(2,"Deep");
+3.pst.executeUpdate();
+
+
+
+DriverManager -> Connection ->PreparedStatement -> Execute the SQL
+
+
+------------------------------------------------------------------------                       --------------------------------------------------------------
+Persistence Context is the first level cache where all the entities are fetched from database or saved to data base, it keeps track of any changes made into a managed entity.
+
+ @PersistenceContext   - To tell entity manager to use transaction persistence context.
+
+Extentended persistence context can span across multiple transactions
+'
+Note - we can't flush entity without transactions
+
+EntityManager is the interface, that interact with persistence context.
+
+Entity manager API provides collections of method to ineteract with database. -     persist(object), find(entity_name.class ,id), remove(Object),merge(object)- update table
+
+------
+
+TypedQuery<Instructor> query=entityManager.createQuery("select i from instructor i "+"JOIN FETCH i.courses "+"where i.id = :date,Instructor.class);
+
+query.setParameter("data",id);
+
+Instructor inst=query.getSingleResult();
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Detach - if entity is detached , it is not associated with a Hibernate session;
+Merge - if instance detached from persistence context/session , then it will reattach to session
+Persist - Transitions new instances to managed state state. next commit /flush will save to db.
+Remove - Transitionsed managed entity to be removed. next commit /flush will save to db.
+Refresh - Reload/sync object with data from db. Prevents stale data.
+
+			               ------------ Entity Lifecycle ------------------
+
+						<---persist/rollback
+						delete/remove
+						------------------------> removed
+New -------------->      Persistent/Managed  --------------------------->  Detached
+     save/persist				commit/rollback/close
+      <---rollback		                  <--merge
+
+				------------------------------ end ---------------------------------
+
+
+@EnableCaching
+
+@Cacheable - at entity, also can use at method level
+
+@CacheEvict - att method level, to remove data
+@CachePut: Use this annotation to update the cache with the result of a method call, even if the result is already in the cache.
+
+@Caching - to use multiple same type chache annotations by nesting in this annotation
+
+
+
+@QueryHints
+
+@Cache
+
+L2C puts , L2C hits , L2C misses
+
+
+@Repository - specialized annotations for repositories, supports component scanning, translate JDBC exception
+
+
+--------------------------------------------------------------- Transaction Management -----------------------------------------------------------------------
+ACID
+Concurency side effects Dirty read, NonRepeatable Read, Phantom read 
+
+@Transaction - 
+
+@Transactional - To create declarative transaction, can used at method or class level
+
+Attributes supported by Transactional annotation is : Propogation(PROPAGATION_REQUIRED), Isolation, Timeout, RollBackFor, NoRollBackFor, readOnly 
+
+Isolation levels - Read_Uncommited (leads to dirty read), Read_Commited(lead to non repeatable reads and phantom read), Repeatable read(lead to phantom reads), Serializable
+
+TransactionTemplate - used to create programmatic transaction 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+@Embeddable
+class CompositeKey implements Serializable {conatains two vars and implement hasCode equals Methods for crrect key comparison}
+
+@EmbeddedId
+private CompositeKey compositeKey;
+
+@PrePersist - use at method level , Set the generatedId into the composite key during persist for one var of CompositeKey
+------------------------------------------------------------------------------------------------------------------------------------------------
+@GeneratedValue(strategy=GenerationType.**)
+
+1. AUTO - 
+2. IDENTITY
+3. SEQUENCE
+4. TABLE
+5. UUID
+
+Cascade type - Detach,Merge,Persist,Refresh,Remove
+
+@OneToOne(cascade=CascadeType.ALL) 
+@JoinColumn(name="parentTable_FK_ColumnName")
+private InstructorDetail instructorDetail;
+
+
+For Bi-directional we use below in child table: 
+
+@OneToOne(mappedBy="instructorDetail" , cascade=CascadeType.ALL)  - mappedBy tell to hibernate to look at instructorDetail field in Instructor class
+private Instructor instructor;
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Unique key 'TITLE_UNIQUE' ('column_name),
+
+
+class course
+@ManyToOne
+@JoinColumn(name="child_table_FK")  -: child_table_FK is column of course table that refrence pk of Instructor table
+private Instructor instructor;
+
+class Instructor
+@OneToMany(mappedBy="instructor",cascade={CascadeType.Persist,CascadeType.Merge},fetch=FetchType.LAZY)  - tell to hibernate to look at instructor field in course 		class, use the information from Course class 
+@JoinColumn 
+private List<Course> courses;
+
+
+In instructor class add convenience method for bi-directional  while adding course
+
+---------
+# Default Fetch type 
+
+OneToOne - Eager
+OneToMany - Lazy
+ManyToOne - Eager
+ManyToMany - Lazy
+
+For Lazy loading, Hibernate requires open seesion,if session closed and any attempt to load lazy data will throw exception by Hibernate
+
+JOIN FETCH - it is used to retieve data eagerly, it used in query
+
+----------
+while deleting OneToMany, first instructor by id then break association , iterate through course and keep null at instructor in course, means remove instructor from course, if we don't remove  will get constraints voilationException.
+
+TO delete course , find course by id and delete
+
+--------------OneToMany (Uni directonal) Course -> Review  ---------------------------------------------------------------------------------------------
+
+course id,title,instructor_id
+Review id,comment,course_id (created through sql query,, no need to add column course_id in entity class
+
+create table review ( ... key 'FK_COURSE_ID' ('couser_id),constraint 'FK_COURSE' Foreign key ('course_id') refrencens course('id')
+
+in corse class changes like below
+
+@OneToMany(cascade=CascadeType.ALL)
+@JoinColumn(name="course_id") -> it tells hibernate look course_id column in review table, use this info to find associated reviews of a course
+private List<Review> reviews;
+
+add convenience method to add reviews as review is list
+
+-----------------------------------ManyToMany--------------------------------------------------------------------------------------------------------------------
+
+JoinTable - used to join the two table which is having ManyToMany relationship, this table will have two foreign key.
+
+
+---------------------------------------------------------------- TWO DB Connections  ---------------------------------------------------------------------
+
+add properties for both db , like spring.datasource.first.url,spring.datasource.second.url
+
+create two different configurations class which will be annotated with @EnableJpaRepositories(here give basPackages and link EntityManagerFactory and TransactionManger) and @configuration.
+
+Inside this configuration class create DataSource object and bind correct property, also create JPA EntityManager and PlatformTransactionManager
+
+
+while createing bean please use @Primary or @Qualifier
+-----------------------------------------------------------------------------------------------------------------------------------------------------------

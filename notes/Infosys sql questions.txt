@@ -1,0 +1,44 @@
+Student: 
++------------+------------+------------+------------+
+| student_id | first_name | last_name  | advisor_id |
++------------+------------+------------+------------+
+|          1 | Tanisha    | Blake      |          2 |
+|          2 | Jess       | Goldsmith  |       NULL |
+|          3 | Tracy      | Wu         |          3 |
+|          4 | Alvin      | Grand      |          1 |
+|          5 | Felix      | Zimmermann |          2 |
++------------+------------+------------+------------+
+ 
+Advisor: 
++------------+------------+-----------+
+| advisor_id | first_name | last_name |
++------------+------------+-----------+
+|         r4 | Anita      | Woods     |
++------------+------------+-----------+
+
+ 
+Find the students whose advisor is Amy Cheng
+
+select * from student where advisor_id=(select advisor_id from advisor where first_name='Amy' and last_name='Cheng');
+
+
+
+finds all advisor who have more than one student
+
+select * from Advisor where advisor_id in(
+select advisor_id from student group by advisor_id having count(student_id) > 1 );
+
+get all advisors who has maximum no of student
+
+select * from Advisor where advisor_id in(select advisor_id from student group by advisorID having count(student_id) = (select max(pp) from (select count(student_id) as pp from student group by advisor_id) as newTable));
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+MySQL Query... practice....
+
+
+select supplierid from Products group by supplierId having count(ProductID) =(select max(pp) from (select count(ProductID) as pp from Products group by supplierID) as Deep);
+
+
+
+-------------------------------------------------

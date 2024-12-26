@@ -1,0 +1,320 @@
+java.util.Optinal
+
+Optional<T> empty() - returns emplty optional object
+            of(T) - returns optional with specified non-null value, for null give exception
+            ofNullable() 
+
+T get() - retuens value if present otherwise thorws NoSuchElementException
+isPressent() - returns true if value is present
+orElse(T other) - returns the value if present,  otherwise default Value
+otElseGet(Sup)
+toString() - returns non-empety string representation of this optional suitable for debugging
+ 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+-----------------------------------------------------------  List - Interface  -------------------------------------------------------------------------------
+
+
+						ArrayList
+						LikedList
+						Stack
+						Vector   
+			Methods of List
+					get(), set(), toArray(), toString() - convert list in to array, contains()
+
+
+
+		 ArrayList - like dynamic array, Collections.synchronizedList() method that synchronizes the list as a whole
+                         
+                            Methods of ArrayList - clone(), sort(), ensureCapacity(), isEmpty(), indexOf()
+
+		LinkedList - also implements Queue and Deque
+
+                            Methods of LinkedList - addFirst(),getFirst(), removeFirst(), AddLast(),get()
+
+                Vector - it synchronizes each individual operation, vecotr class is less efficient, recoment to use array list.
+                       
+			  Methods of Vector - get(), 
+
+
+               Stack - extends vector class, recomended to use ArrayDeque
+              
+                    Methods - push(), pop(), peek(), search(elements name) - returns index, empty(),  
+
+
+
+
+--------------------------------------------------------------  Queue (Interface)  -----------------------------------------------------------------------------
+
+							
+							PriorityQueue
+							Deque - Interface
+                                                               ArrayDeque
+							       LinkedList
+
+			Queue Methods - offer() - add specified elements and return boolean, elements() - return head of queue, peek(), remove(), poll()
+
+
+   			PriorityQueue - provides functionality of heap data structure, elements of a priority queue may not be sorted. However, elements are always             retrieved in sorted order.
+
+
+    			PriorityQueue Methods - add(), offer(), remove(), poll(), contains(), toArray()
+
+
+							
+  			Deque -  push(), pop(), peek
+ 	
+				ArrayDeque
+				LinkedList
+
+
+                       ArrayDeque - it implements both Queue and Deque both interface.
+
+
+                        Methods - add(), addFirst(), addLast(), offer(), offerLast(), offerFirst(), getFirst(), getLast(), peek(), peekFirst(), peekLast(), remove(), remove(element), removeFIrst(), removeLast(), poll(), pollLast(), PollFirst(), clear(), descendingIterator(), 
+
+
+
+
+
+-------------------------------------------------------------------  SET (Interface)  ----------------------------------------------------------------------------
+
+                          Set - can't contains duplicate elements
+
+
+                                HashSet
+				LinkedHasSet
+				EnumSet
+				TreeSet
+
+
+ 				Methods of Set - retainAll(another set)- retain all elements in set that are also avlb in specified set, contains(), containsAll(),              			        		toArray(), hashCode().
+
+
+                                 to check if x is a subset of y, we can use y.containsAll(x)
+			        intersection of two set x.retainAll(y)
+				union of two sets x.addAll()
+
+
+
+
+				HashSet - capacity = 16, loadfactor = 0.75, elements in a hash table are accessed using hash codes, notImplicitally synchronised, 
+
+						Methods - difference of two sets x.removeAll(y), clone(), isEmpty(), 
+
+
+
+				LinkedHashSet - linked hash sets maintain a doubly-linked list internally for all of its elements. The linked list defines the order in 						which elements are inserted in hash tables., all methods of HashSet included, 
+
+
+
+				TreeSet - 
+
+						Methods : first(), last(), pollFirst(), pollLast(), headSet(,), tailSet(,) , subSet(,,,) 
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------   MAP  --------------------------------------------------------------------------------------
+
+
+
+
+
+for each loop :
+for(String i:list)
+
+
+
+LinkedList is same as ArrayList, the only difference is LinkedList contains it's items in containers and one container linked to another conatiner
+addFirst(),getFirst(), removeFirst(), Last
+
+
+HashMap<Key ,Value> -: stored items as sorted collections
+put(key, value), get(Key), remove(key), clear(), size()
+for(String i: Hs.keySet())
+              Hs.Values()
+
+
+HashSet<String> -: Every items are unique
+
+add(), Contains("Used to check item exist  or not") - return tru or false  , remove(), clear(), size()
+
+
+
+Iterator<String> it=list.iterator();
+
+it.hasNext() and it.next()
+
+
+
+Collections class :- 
+1. sort method - to sort alphabetically or numerically
+2. 
+
+
+
+                                                                                    Enum
+
+
+
+enum Status{
+Running, Failed, Pending, Success;
+}
+
+
+Status s= Status.Running;
+s.ordinal() - gives index value of Status value aasigned.		
+Status.values() - gives array.
+
+enum Laptop{
+MacBook(price: 200), XPS(Price:100);
+
+private int price;
+private Laptop(int price){
+this.price=price;}
+
+}
+
+
+
+                                                                                       Date
+
+LocalDate d=LocalDate.now();
+     
+LocalTime
+LocalDateTime
+DateTimeFormatter
+.ofPattern()
+.formatter()
+
+
+
+
+                                                                                      Lambda
+
+
+(parameter1, parameter2) -> expression
+
+(parameter1, parameter2) -> { code block }
+
+StringFunction exclaim = (s) -> s + "!";
+numbers.forEach( (n) -> { System.out.println(n); } );
+
+
+
+Anonymous Object - it has no refrence, can't re-use.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+Type Casting - Converting data type of var, from lower to higher is implicitlly converted but from higher to lower , explicit coversion is required i.e. narrowing conversion.
+
+Upcasting - It happens implicitlly, 
+ 
+
+A obj= new B()  // upcasting , we can't call method of B by this object
+Downcasting -
+B obj=(B) obj;  // 
+ 
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Inner class -  class inside class
+A ob= new A()
+A.B obj= ob.new B();
+A.B obj= new A.B() // if  inner class B is static
+
+-----------------------------------------------------------------------------------------------------------------------------
+Comparable has compareTo() method, provides single sorting sequence, logic of sorting must be in same class , for natural sorting order, all wraper classes and String classes implements Comparable interface.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Consumer<Integer> con=new Consumer<>(){
+public void accept(Integer n)
+{
+sysout(n);
+}
+};
+list.forEach(con);
+
+list.forEach(n -> sout(n));
+
+-----------------------------------------------------------------------------------------------
+Volatile - volatile variable is never be stored in the cache, all read and write done from main memory,indicate that a variable's value may be modified by multiple threads simultaneously, where multiple threads are accessing shared variables, updates to that variable are immediately visible to other threads
+private static volatile int var   5
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Refrences can be allocated to heap if they are members of class.
+Objects, class members,Static var -> heap (Shared)
+Local Refrences, Local primitive type -> stack
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Atomic op -> assignments to primitive type(excluding double and long), Assignments to references
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Serialization - Converting and object into sequence of bytes,byte stream is platform-independent
+
+To send object over HTTP we need to convert into byte stream.
+
+implements Serializable to our class to mark class can serializez.
+
+ObjectOutputStream Class  used to write objects into a stream
+
+private transient int pass; - pass field of the object doesn't get serialized
+
+Only non-static data members get serialized.
+
+----
+
+  FileOutputStream fout = new FileOutputStream("fout.txt");
+
+   ObjectOutputStream out = new ObjectOutputStream(fout);
+
+   	out.writeObject(emp);
+   	out.flush();
+   	out.close();
+----
+
+private static final long serialVersionUID = 123L; -  it ensures that the same class which was there during the serialization process is loaded.
+
+----
+    FileInputStream fin = new FileInputStream("f.txt");
+
+   	ObjectInputStream in = new ObjectInputStream(fin);
+
+   	Employee emp1 = (Demo)in.readObject();
+   	in.close();
+----
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+This() and super() must be the first statement in the block,cannot use this() and super() keywords in the same block, in case of constructor
+
+We use this() for constructor chaining in same class.
+A constructor cannot be marked as final.
+
+Interface can't have constructor.
+
+------------------------------------------------------------------------------------------------------------------
+Class c;
+c.newInstance() - is used to create object like new, but we use it when we don't know the class name, we take from command line arguement or file.
+
+----------------------------------------------------------------------------------------------------------------------------
+Instance Initializer block is used to initialize the instance data member. It run each time when object of the class is created.
+It is copied to constructor just after super() call.
+--------------------------------------------------------------------------------------------------------------------------
+
+Jiska refrence hai usi ka method dikhega, agr override hai to local/child ka method call hoga
+ Downcasting ke bad child and parent both will visible, loca/child ki priority jayada hai
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Abstract class can have both static and non static and final and non-final 
+
+
+

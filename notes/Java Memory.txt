@@ -1,0 +1,46 @@
+
+You can set Java-specific memory limits or other JVM options when running the JAR:
+
+java -Xmx512M -Xms128M -jar your-application.jar
+-Xmx512M sets the maximum heap size to 512 MB.
+-Xms128M sets the initial heap size to 128 MB.
+
+
+
+Memory Leaks
+
+When you get an outOfMemory exception on your app, there are two distinct possibilities : 
+1. Insufficient memory given to the application(Capacity problem)
+2. A true memory leak(more and more memory consumption as time passes without release of resources) 
+
+-XLoggc : redirects GC output to file instead of console
+
+
+
+
+Analyzer Tool
+
+Eclipse MAT in eclipse
+VisualVM fin IntelliJ
+
+
+----------------------------------------- JVM JRE JIT ClassLoader -----------------------------------------------------------------
+
+ClassLoader - it is integral part of JRE, which loads the java classes dynamically during execution when JVM request for class.
+
+
+Javac -  convert source code to Bytecode(Platform independent)
+
+JVM Intepreter - Intepret the bytecode at runtime
+
+HostsPots -JVM continuously monitor the execution of program and identify frequently executed code.
+JIT(Just-In-Time) - When a hotspot is detected, the JIT compiler compiles the corresponding bytecode into native machine code for the 		    underlying hardware platform.his compilation process is performed on-the-fly.
+
+java -XX:+PrintCompilation -version  - prints logs for JIT
+
+JDK = Development Tools + JRE (Java Runtime Environment)
+JRE = Libraries for running the application + JVM (Java Virtual Machine)
+JVM = Only the runtime environment that helps in executing the Java bytecode.
+
+---------------------------------------------------------------------------------------------------------------------------------
+

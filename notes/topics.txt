@@ -1,0 +1,56 @@
+Incident Management System
+
+BookMyShow.com
+
+
+Interview video
+
+
+Asset Core work notes
+
+
+
+Spring AOP
+
+
+Redis(Cache)
+
+
+Oauth2/JWT
+
+
+
+------------------------------------------------------------------------------------------
+
+Garbage Collections
+
+Memory Management
+
+Networking
+
+Sockets
+------------------------------------------------------------------------------------------
+
+Collections class
+
+JVM architecture 
+
+BoilerPlate Code
+
+Beans
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

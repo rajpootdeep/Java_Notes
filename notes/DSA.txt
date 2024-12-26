@@ -1,0 +1,64 @@
+Big O O(n) worst cases (Default)
+
+Big Omega Ω(1) Best case
+
+Big Theta Θ(n) Average case
+
+-------------------------------------------------------    Sorting   -----------------------------------------------------
+
+Bubble Sort -: space O(1)  time O(n2) , stable
+Best Case time O(n)
+we iterate through all elements  till n-1 elements for n-1 times
+for(int i=0;i<n-1;i++){
+ for(int j=0;j< n-1-i ;j++)
+	{
+	  swapping using index j and j+1
+	}
+}
+
+* - Best case can be optimized using flag Boolean at time swapping not happened for any whole iterate . time O(n)
+* Lats element is at correct place in one iteration
+==========================
+Stable sort - when duplicates elements are in same sequences after sorting
+Unstable sort - vice versa of stable sort
+In-Place algorithm - use same array for sorting
+==========================
+
+Selection Sort - : space o(1)   time o(n2) , no stable
+
+for(int i=0;i<n-1;i++){
+	for(int j=i;j<n;j++){
+	 swapping;
+	}
+}
+
+
+
+
+
+Insertion Sort -: Space O(1)  time  O(n2)
+Stable 
+
+Best case -O(n)
+Below code is not optimised
+
+
+for(int i=0;i<n-1;i++){
+	for(j=i+1;j>0;j--){
+	  if(ar[j]<ar[j-1]) swap;
+	}
+}
+
+
+
+Merge Sort  time - O(nlogn) in all cases, space - O(n), Stable - yes, inplace - no, 
+
+
+Quick SOrt - worst case time - O(n2), avg/best case - O(nlogn), Inplace - yes, stable - no,
+
+
+
+---------------------------------------------------------  Limear Data Structure ------------------------------------------------------------------------
+
+
+

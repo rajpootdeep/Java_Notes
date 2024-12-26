@@ -1,0 +1,6 @@
+discountMap.entrySet()
+                .stream()
+                .filter(entry -> entry.getKey().test(customer))
+                .map(Map.Entry::getValue)
+                .findFirst()
+                .orElse("No discount");

@@ -1,0 +1,124 @@
+Spring MVC
+
+Model-View Controller design pattern
+*Dispatcher servlet (Front controller, i.e. responsible to manage flow of spring MVC applicaton) is a class that receives the incoming request and maps to controller maodel views.
+* Dispatcher servlet dispatches request to handlers
+
+#Steps to create simple Spring MVC applioaction -:
+
+1. Pom.xml - for dependency
+2. Request page i.e. JSP or etc
+3. Controller class
+4. web.xml - entry of controller, it contains Dispatcher servlet (In java based configuration we create WebInitializer.java in place of web.xml and MVCconfig.java is used in place of dispatcher servlet).
+5. spring-servlet.xml - define bean and other configurations
+
+* ViewResolver enables to render models in browser.
+
+Annotations :
+
+@RequestParam - to extract (input data may be passed as a) query parameter or form parameter and even files from request.
+@RequestParam(name="id") [(value="id"), ("id")] String foodId
+
+#optional request parameters
+@RequestParam(required=false) String id - when parameter is not specified , the method parameter is bound to null.
+we can also use  Optional<T> like PathVariable in rest api. [ id.orElseGet(() -> "not provided" ].
+
+#default value to RequestParameter
+@RequestParameter(defaultValue="test" String id)
+#Mapping all parameters without defining their names or count by just using Map.
+@RequestParam Map<String,String> allParams
+#Mapping Multivalue parameter
+@RequestParam List<String> id
+
+Ex. 
+@RequestParam(name="name", required=false, defaultValue="world").
+
+
+@RequestMapping - used to map HTTP request to handler methods of MVC and REST controllers. (We can also use at class level)
+
+
+@ModelAttribute() - Binds a method parameter or method return value to a named model atrribute and then expose it to a web view.
+
+
+
+@Autowired - tells Spring to inject a dependency, 
+
+Constructor injection -: used for mandatory dependencies that the class cannot function without. It provides better immutability, as dependencies are final and cannot 			change after the object is created.container calls the constructor with arguments matching the dependencies.
+Setter -: This approach is useful for optional dependencies or when a dependency's value needs to be changed later,  Spring calls these setters during bean 				initialization.
+Field-Based Injection -: used for convenience and when you want to minimize boilerplate code. However, it is less suited for testing and immutability since 				dependencies are not final.
+
+
+@Qualifier("classname_with_1st_letter_small") - at method level, it has higher  priority than primary,  eliminate the issue of which bean needs to be injected.
+
+@Primary - at class level- to make that class as primary implementation
+
+@Lazy - at class level, Bean initialized if needed for DI
+
+
+
+@Component - class level annotation, mark the class as a Spring Bean, Spring Bean class is managed by Spring, also make it available for dependency injection
+
+@Service -  this layer is imlementation    of service facade design pattern.
+
+@Respository -
+
+@Controller - mark class as controller/web request handler
+
+
+# Valiadtion annotation (Hibernate Validator)
+1. @Min(value=18, message="Must be greater than 18")
+2. @Max(value=25, message="Must be lass than 25")
+3. @NotNull(message="")  - not null, can be empty
+4. @NotBlank(message="") - String is not null and trimmed length is >0
+5. @NotEmpty(message="") - not null and size >0
+6. @Email(message="") - valid email address
+7. @Pattern(regexp="^[a-zA-Z]{6,10}$")
+8. @AssertTrue - element should be true
+9. @AssertFalse - element should be false
+10. @NegativeOrZero
+11. @Null
+12. @Negative
+13. @Positive
+14. @PositiveOrZero
+15. @Size(min=10, max=200, message="")
+16. @Future - Date must be in future of given date
+17. @Past   -  Date must be in past of given date
+
+
+
+Java's Standard Bean Validation API -
+
+* Model Interface - provide spring to work with data, tranfer data between view and controller, acts as data container, supply attributes used for rendering views.
+* ModelMap - It also used to pass values to render a view., it gives the ability to pass a collection of values.
+* ModelAndView - Return both model and view in single return value.
+
+
+* @SpringBootApplication - used to mark the main class of Spring Boot Appliaction, it encapsulates  @Configuration, @EnableAutoConfiguration and @ComponentScan annotations with thier default attributes.
+
+Behind the scene Creates application context and registers all beans , start the embeded server
+
+@Configuration - Able to register extra beans with @Bean or import other configuration classes
+
+@ComponentScan - Scan beans so that it can visisble to IOC.
+
+@EnableAutoConfiguration - it's name suggest , means Spring Boot looks for auto configuration beans on it's classpath and automatically applies on them.
+
+
+@Bean - to use third party class as Spring Bean
+
+ 
+@InitBinder - this annotation works as a pre-processor
+              It will pre-process each web requests coming into to our controller
+
+
+@Value("${app.name}") - at any var in class to retrive metadata from properties file. 
+
+
+@ConfigurationProperties(prefix="mail) - used to bind bunch of key value pair from properties file to DTO or bean class like entity, not other annotation required inside class
+
+@Profile("stg") -
+
+@Bean
+@Scope("Singleton") - scope of beans, "prototype" , at class level, or bean method level
+
+Life Cycle of Spring Beans : ??

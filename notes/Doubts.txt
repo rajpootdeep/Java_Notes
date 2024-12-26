@@ -1,0 +1,47 @@
+
+
+Practice questions for Stream and collections
+
+Practice logical coding questions
+
+Spring Security
+
+AOP
+
+
+
+================================================================================================================================================
+
+try use main method arguement
+-----------------------------------------------
+Reflections
+------------------------------------------
+
+Circular Dependency
+------------------------
+Call Back Function
+
+---------------------------------
+
+
+
+Throw exception in method overriding
+
+
+A final variable if initialised inside a method ensures that the variable cant be changed only within the scope of that method.
+
+
+
+https://www.thejoboverflow.com/p/p1306/
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+covert int[] array to List   = Arrays.stream(arr).boxed()
+
+int[] arr = {1, 6, 3, 8, 3, 3, 9, 3};
+
+// Using Arrays.stream() and collecting into a list
+List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+
+--------------------------------------------------------------------------------------------------------------------------

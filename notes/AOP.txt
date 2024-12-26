@@ -1,0 +1,17 @@
+For logging, Security, Transactions, audit logging
+
+
+Aspect : module of code for a cross-cutting concern
+
+Advice : What action is taken and when it should be applied 
+
+Join Point : When to apply code during program execution
+
+Pointcut: A predicate expression for where advice should be applied
+
+Advice type : 
+		Before advice : run before method
+		After finally advice: run after the method(finally)
+		After returning advice: run after the method (success execution)
+		After throwing advice: run after method (if exception thrown)
+		Around advice: run before and after method
