@@ -1,3 +1,34 @@
+------------------------------------------------------------------ Twelve-Factor Methodology ---------------------------------------------------------------------
+
+
+The twelve-factor methodology is a set of twelve best practices to develop applications developed to run as a service
+
+
+Codebase - Github
+
+Dependencies - Gradle
+
+Configurations
+
+Backing Service - Database or Message Broker, to replace these, only configurations should be changes
+
+Build, Release and Run  - converting code base into running application contains separate stages
+
+Processes - stateless process
+
+Port Binding
+
+Concurrency
+
+Disposability
+
+Dev/Prod Parity  - keeping the gap between development and production environment as minimal as possible
+
+Logs - it is a time-ordered stream of events.
+
+Admin Processes - keeping such admin scripts together with the application codebase
+
+
 -------------------------------------------------------------------Microservices --------------------------------------------------------------
 
 

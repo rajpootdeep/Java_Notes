@@ -42,3 +42,5 @@ select supplierid from Products group by supplierId having count(ProductID) =(se
 
 
 -------------------------------------------------
+
+select col1,col2 from T1 inner join T2 on T1.col=T2.col where condition group by c1, c2  Having grp_condition order by c1 ASC|DESC, c2 ASC|DESC ;

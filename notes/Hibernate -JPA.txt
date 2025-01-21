@@ -263,7 +263,7 @@ TransactionTemplate - used to create programmatic transaction
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 @Embeddable
-class CompositeKey implements Serializable {conatains two vars and implement hasCode equals Methods for crrect key comparison}
+class CompositeKey implements Serializable { conatains two vars and implement hasCode & equals Methods for crrect key comparison}
 
 @EmbeddedId
 private CompositeKey compositeKey;
@@ -349,7 +349,7 @@ JoinTable - used to join the two table which is having ManyToMany relationship, 
 
 add properties for both db , like spring.datasource.first.url,spring.datasource.second.url
 
-create two different configurations class which will be annotated with @EnableJpaRepositories(here give basPackages and link EntityManagerFactory and TransactionManger) and @configuration.
+create two different configurations class which will be annotated with @EnableJpaRepositories(here give basePackages and link EntityManagerFactory and TransactionManger) and @configuration.
 
 Inside this configuration class create DataSource object and bind correct property, also create JPA EntityManager and PlatformTransactionManager
 

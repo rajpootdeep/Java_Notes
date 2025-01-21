@@ -9,9 +9,16 @@ isPressent() - returns true if value is present
 orElse(T other) - returns the value if present,  otherwise default Value
 otElseGet(Sup)
 toString() - returns non-empety string representation of this optional suitable for debugging
+
+
+--------------------------------------------------------------- Garbage Collector Java 8 ----------------------------------------------------------------
  
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
+Metaspace replaced PermGen - Metaspace which is reside in native memory and allows dynamic resizing.
+
+Parallel GC - Default garbage collector 
+
+G1 GC - Garbage First Garbage Collector - Divides heaps into regions and collect s region with most Garbage first.
+
 -----------------------------------------------------------  List - Interface  -------------------------------------------------------------------------------
 
 

@@ -16,6 +16,7 @@ When you get an outOfMemory exception on your app, there are two distinct possib
 -XLoggc : redirects GC output to file instead of console
 
 
+Heap Dump
 
 
 Analyzer Tool
