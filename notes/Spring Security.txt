@@ -58,4 +58,4 @@ Advantages of Token
 . Only once the user have to enter credentials after for any request only token is going to be travel inside network
 . Expiration can be set for time period
 . Reusability, generate token for app, can used for different app as well, this behaviour is called SSO (Single Sign on)
-. Statelessness
+. Statelessness.

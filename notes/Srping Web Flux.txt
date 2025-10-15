@@ -1,0 +1,16 @@
+
+
+
+
+——————————————————————————— ———————————————————————— Transactional ——————————————————————————————————
+
+TransactionalOperator -: in Spring web flux + Reactive MongoDb / R2DBC , use TransactionalOperator to wrap a reactive pipeline in a transaction
+				in reactive transaction transaction is bound to Reactor Context not to thread.
+				In case of parallel execution using Mono.zip Reactor context can be split or lost.
+
+In mongoDb every transaction belongs to a single session, A session is like a channel between client and server.
+Session is sequential by design , a session can only process one operation at a time, if u send multiple operations in parallel on the same session , MongoDB queues them internally and executes them in order. 
+
+
+
+Mono.zip(). -: runs multiple publishers in parallel. Zip may subscribe to each mono independently.
