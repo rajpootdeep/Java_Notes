@@ -1,9 +1,0 @@
-
-
-JUnit
-
-Cloud Computing
-
-Java EE component
-
-Appliaction Containers

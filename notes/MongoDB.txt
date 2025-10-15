@@ -1,0 +1,21 @@
+------------------------------------------  Topics. --------------------------------------------------------------------------
+
+MongoDb's design philosophy and architecture
+
+CRUD operations
+
+Data modeling
+
+Indexing nd performance
+
+Aggregation
+
+Replication
+
+Sharding
+
+--------------------------------------------------------------------------------------------
+
+
+
+

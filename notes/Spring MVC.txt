@@ -1,4 +1,4 @@
-Spring MVC
+ Spring MVC
 
 Model-View Controller design pattern
 *Dispatcher servlet (Front controller, i.e. responsible to manage flow of spring MVC applicaton) is a class that receives the incoming request and maps to controller maodel views.
