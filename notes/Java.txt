@@ -1,3 +1,48 @@
+------------------------------------------------------  Data Type in Java ----------------------------------------------------------------------------
+
+
+Primitive Type - 
+
+	Boolean (Boolean - 1 bit, Numeric (Character + Integral) 
+
+	Character ( char - 2 bytes)
+	Integral( Integer + Floating Point)
+
+	Integer ( byte - 1 byte,  short - 2 bytes,  int - 4 bytes, long - 8 bytes)
+	Floating Point ( float - 4 bytes, double - 8 bytes )
+	
+	0L , 0.0f , 0.0d , false, 'u0000' 
+
+	A - 65, Z - 90
+
+	a - 97, z - 122
+
+
+Non-Primitive Type
+
+	Class, Enum, Interface, String, Array
+
+
+----------------------------------------------------------------- CHAR Data Type -------------------------------------------------------------------
+
+Char data type is represented as integer between 0 - 65535.
+It defined in ''.
+
+
+
+--------------------------------------------------------  Bitwise and Bitshift operator --------------------------------------------------------------
+
+
+Bitwise AND &           -  done one hai to 1 other wise 0.
+Bitwise Inclusive OR |  - ek bhi one hai to one other wise 0.
+Bitwise Exclusive OR ^  - dono different hai to 1 other wise 0.
+Unary Bitwise Complement ~    - 
+Signed left-Shift Operator <<  - 
+Signed Right-Shift Operator >>  - 
+
+--------------------------------------------------------------------   ---------------------------------------------------------------------------
+
+
 java.util.Optinal
 
 Optional<T> empty() - returns emplty optional object
@@ -13,7 +58,7 @@ toString() - returns non-empety string representation of this optional suitable 
 
 --------------------------------------------------------------- Garbage Collector Java 8 ----------------------------------------------------------------
  
-Metaspace replaced PermGen - Metaspace which is reside in native memory and allows dynamic resizing.
+Metaspace replaced  PermGen - Metaspace which is reside in native memory and allows dynamic resizing.
 
 Parallel GC - Default garbage collector 
 
@@ -248,8 +293,6 @@ list.forEach(con);
 list.forEach(n -> sout(n));
 
 -----------------------------------------------------------------------------------------------
-Volatile - volatile variable is never be stored in the cache, all read and write done from main memory,indicate that a variable's value may be modified by multiple threads simultaneously, where multiple threads are accessing shared variables, updates to that variable are immediately visible to other threads
-private static volatile int var   5
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 Refrences can be allocated to heap if they are members of class.
 Objects, class members,Static var -> heap (Shared)

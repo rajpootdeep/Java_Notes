@@ -42,14 +42,74 @@ Styles -: Bound - instance known at compile-time,
 	  Static
 	 Constructor 
 
+-----------------------------------------------------------Concurrency v/s Parallelism ----------------------------------------------------------------------
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Concurrency is about handling multiple tasks at once,
+Parallelism is about executing multiple tasks at the same time.
+
+
+1. Concurrency (Concept)
+
+Dealing with multiple tasks at once.
+One or more CPU core.
+Structuring a program to handle multiple tasks.
+
+2. Parallelism (Execution)
+
+Doing multiple tasks at the same time
+Requires multiple CPU cores
+Actually executing tasks simultaneously.
+
+
+Spring Boot (Blocking)
+
+Uses thread-per-request
+
+Concurrency = number of threads
+
+Parallelism = CPU cores
+
+WebFlux / Vert.x (Non-blocking)
+
+High concurrency
+
+Low number of threads
+
+Parallelism only for CPU-heavy tasks
+
+Java 21 Virtual Threads 🔥
+
+Concurrency skyrockets
+
+Parallelism still limited by CPU cores
+
+
+----------------------------------------------------------------- Multithreading ----------------------------------------------------------------------------
+The main thread is the JVM-created, non-daemon thread that starts program execution by running the main() method.
+
+Volatile - volatile variable is never be stored in the cache, all read and write done from main memory, indicate that a variable's value may be modified by multiple threads simultaneously, where multiple threads are accessing shared variables, updates to that variable are immediately visible to other threads
+private static volatile int var
+
+| Feature      | User Thread                   | Daemon Thread         |
+| ------------ | ----------------------------- | --------------------- |
+| JVM behavior | JVM waits for it to finish    | JVM does **not** wait |
+
+
+| Default      | ✅ Yes                         | ❌ No                  |
+| Used for     | Business / app logic          | Background services   |
+| Examples     | `main` thread, worker threads | GC, monitoring        |
+
+
+
+Types of Lock :
+		Intrinsic - Automatically used when we use synchronized locks.
+		Explicit -  These are advanced lock, provide more control on locks using Lock class of jva.utitl.concurrent.locks. 
 
 
 Multithreading
 
-Thread pool is a set of reusable worker threads available to execute tasks
-
+Thread pool is a set of reusable worker threads available to execute tasks.
+ 
 ExecuterService is interface that provides services for the creation and management of threads
 
 Executors utility class provides static method that return ExecutorService implementation
@@ -73,7 +133,7 @@ A Future<V> is used to obtain the results from a Callable's call() method
 A Future<V> object represents the result of an asynchronous computation. Methods are provided to check if the computation is complete (isDone()) and to retrieve the result of that computation (V get())
 
 
-Executor Interface execute(Runnable) -> ExecutorService Interface submit(callable/Runnable)
+Executor Interface execute(Runnable) nothing return void + ExecutorService Interface submit(callable/Runnable) Returns Future<?>
 
 
 Executors exists that enable us to schedule tasks to be performed at some time in future or in particular interval 

@@ -1,7 +1,36 @@
-Incident Management System
+------------------------------------------------------------------------  Questions --------------------------------------------------------------------------------
+Main thread vs worker threads
 
-BookMyShow.com
+Thread lifecycle with main thread
 
+Main thread in Java 21 virtual threads
+
+Why main thread doesn’t handle requests in servers
+
+
+
+User thread vs virtual thread
+
+Daemon thread pitfalls
+
+Thread lifecycle in JVM
+
+How JVM shuts down internally
+
+
+
+
+Concurrency vs Parallelism vs Asynchronous
+
+How Vert.x achieves concurrency
+
+Virtual Threads vs Event Loop
+
+CPU-bound vs I/O-bound task design
+
+
+
+-----------------------------------------------------------  ---------------------------------------------------------------------------
 
 Interview video
 
@@ -15,7 +44,15 @@ Spring AOP
 Redis(Cache)
 
 
-Oauth2/JWT
+Oauth2/JWT with refresh token + RBAC
+
+HLD
+LLD
+
+LLM
+
+RAG
+MCP
 
 
 
@@ -28,15 +65,12 @@ Memory Management
 Networking
 
 Sockets
+
 ------------------------------------------------------------------------------------------
 
 Collections class
 
 JVM architecture 
-
-BoilerPlate Code
-
-Beans
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -61,6 +95,9 @@ Cloud Computing
 Java EE component
 
 Appliaction Containers
+
+------------------------------------------------------------------------------------------
+
 
 
 

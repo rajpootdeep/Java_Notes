@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e6c3ca-6ff1-402d-b7c5-31e4244a259c" name="Changes" comment="clean up from mac">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/2025 End.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Doubts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Doubts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Rest API - Jax-RS.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Spring MVC.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Spring MVC.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/Thymeleaf.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/self-dec.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/testttttt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/notes/topics.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes/topics.txt" afterDir="false" />
+    <list default="true" id="cd216989-b3ee-4473-82ef-1f093680bd45" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notes/Java.txt" beforeDir="false" afterPath="$PROJECT_DIR$/notes/Java.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,73 +15,45 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;rajpootdeep&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "rajpootdeep"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/rajpootdeep/Java_Notes.git&quot;,
-    &quot;accountId&quot;: &quot;dd4b3539-eac0-46ca-a814-cbb20c778495&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/rajpootdeep/Java_Notes.git",
+    "accountId": "29b5f046-1210-41c9-8ece-0d9eb64f4084"
   }
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2zMDgxlqmuZUM7OGokKy4nFnCCb" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="35mkkd2SZ2x0If2gNLgK6i8M8aR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/intellij/Java_Notes"
   }
-}</component>
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="42e6c3ca-6ff1-402d-b7c5-31e4244a259c" name="Changes" comment="" />
-      <created>1751532163174</created>
+      <changelist id="cd216989-b3ee-4473-82ef-1f093680bd45" name="Changes" comment="" />
+      <created>1763722778600</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1751532163174</updated>
+      <updated>1763722778600</updated>
     </task>
-    <task id="LOCAL-00001" summary="added sprint web flux notes file">
-      <option name="closed" value="true" />
-      <created>1758711726005</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1758711726005</updated>
-    </task>
-    <task id="LOCAL-00002" summary="clean up from mac">
-      <option name="closed" value="true" />
-      <created>1760496809978</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1760496809978</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.rtf" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="added sprint web flux notes file" />
-    <MESSAGE value="clean up from mac" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up from mac" />
   </component>
 </project>
