@@ -263,7 +263,7 @@ Anonymous Object - it has no refrence, can't re-use.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 Type Casting - Converting data type of var, from lower to higher is implicitlly converted but from higher to lower , explicit coversion is required i.e. narrowing conversion.
 
-Upcasting - It happens implicitlly, 
+Upcasting - It happens implicitlly,
  
 
 A obj= new B()  // upcasting , we can't call method of B by this object

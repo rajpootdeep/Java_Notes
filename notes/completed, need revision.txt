@@ -115,7 +115,7 @@ ExecuterService is interface that provides services for the creation and managem
 Executors utility class provides static method that return ExecutorService implementation
 
 Types of executor service  ---:
- ;
+
 Single thread pool executor - a single thread is used ; tasks are processed sequentilly
 
 Cached thread pool executor - creates new threads as needed and resuses threads that have become free
@@ -139,7 +139,9 @@ Executor Interface execute(Runnable) nothing return void + ExecutorService Inter
 Executors exists that enable us to schedule tasks to be performed at some time in future or in particular interval 
 to create scheduled  executors - 
 
-ScheduledExecutorService interface provides 4 methods to schedule tasks: 
+ScheduledExecutorService interface provides 4 methods to schedule tasks:
+
+	 
 
 
  -------------------------------------------------------------------  Stream API  -----------------------------------------------------------------------------------
