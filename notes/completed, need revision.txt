@@ -144,6 +144,33 @@ ScheduledExecutorService interface provides 4 methods to schedule tasks:
 	 
 
 
+---------------------------------------------------------------- Virtual Thread Java 19-21 --------------------------------------------------------------------
+
+Virtual threads are for waiting; Platform threads are for calculating.
+
+1. The Sweet Spot: I/O-Bound Tasks
+Virtual threads are designed for tasks that spend most of their life waiting for something external to happen. In a typical enterprise application, this is 90% of the work.
+
+Use them when your code does this:
+Database Queries: Waiting for SQL results from PostgreSQL, MySQL, etc.
+
+HTTP/API Calls: Calling another microservice and waiting for a JSON response.
+
+File I/O: Reading or writing data to a disk or network storage.
+
+Message Brokers: Waiting for a message from Kafka or RabbitMQ.
+
+Why it works: When a virtual thread hits a "blocking" call (like database.query()), it unmounts from the OS thread. The OS thread is now free to do other work, while the virtual thread simply waits in memory as a tiny object. When the data arrives, the JVM remounts it and it continues.
+
+2. High-Concurrency Web Servers
+If you are building a system that needs to handle 10,000+ concurrent connections (like a chat app, a real-time price tracker, or a heavy-traffic REST API), virtual threads are your best friend.
+
+Traditional way: You would need a massive thread pool or complex "Reactive" code (WebFlux/RxJava).
+
+Virtual Thread way: You just write simple, readable, synchronous code: var user = repository.findById(id);. The JVM handles the scale for you.
+
+
+
  -------------------------------------------------------------------  Stream API  -----------------------------------------------------------------------------------
 
 

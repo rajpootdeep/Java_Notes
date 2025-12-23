@@ -1,0 +1,2 @@
+SpEL expressions are evaluated at runtime by Spring. They are almost always enclosed in the special delimiter: #{ ... }.
+
