@@ -142,7 +142,13 @@ to create scheduled  executors -
 ScheduledExecutorService interface provides 4 methods to schedule tasks:
 
 	 
+CompletableFuture : It provides a powerful and flexible way to write asynchronous, non-blocking code. It was introduced in Java 8.
+		    It support chaining, Manual completion, Exception Handling, CombineResult.
 
+		    It use by default forkJoinPool.
+Methods :
+supplyAsync(task)	ForkJoinPool.commonPool	CPU-heavy tasks only
+supplyAsync(task, vExecutor)	Virtual Thread	I/O-heavy background task.
 
 ---------------------------------------------------------------- Virtual Thread Java 19-21 --------------------------------------------------------------------
 

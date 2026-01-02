@@ -170,4 +170,67 @@ Design Pattern for Microservices -:
 12. Configuration Externalization Pattern - external configuration of application like yml files, env variable or Config server
 
 
+SAGA Pattern : Handles business transactions across multiple microservices using event-driven steps. Each step having  a compensating action.
+ 
+---------------------------------------------------------------- Database Locking -------------------------------------------------------------------------
+
+
+Distributed Concurrency Control -: PCC( Pessimistic Concurrency Control ) & OCC (Optimistic Concurrency Control )
+
+Optimistic Locking : Best when conflicts are rare.
+			It uses version and comparison approach.
+			Isolation Level used Read Committed/ below Repeatable Read.
+			No Chance of Dead Lock.
+			In case of conflict, Overhead of transaction rollback and retry logic is there.
+			
+
+
+Pessimistic Locking : Best when conflicts are likely. Lock the row.
+			Having Dead Lock issue, transactions stuck in dead lock are forced to do rollback.
+			Isolation level used Repeatable Read and Serializable.
+			Putting a long lock (Blocking and Waiting).
+			
+
+
+Type of Lock :
+
+Shared Lock (S Lock) : 
+
+	It allows multiple transactions to read a resource simultaneously. Other transactions can also acquire only a shared lock on the same resource at same time. In  shared lock only read can happen.
+
+Exclusive Lock (X Lock) :
+
+	It allows a transaction to both read and modify a resource. No other transaction can acquire any type of lock on the same resource while an exclusive lock is held.
+                                                                                                                  
+[Update Lock (U Lock) :
+
+	It is used to prevent a deadlock scenario when a transaction intends to update a resource.
+
+Schema Lock :
+
+	It is used to protect the structure of database objects.
+
+Bulk Update Lock (BU Lock) :
+
+	It is used during bulk insert operations to improve performance by reducing the number of locks required.
+
+Key-Range Lock :
+
+	It is used in indexed data to prevent phantom reads (inserting new rows into a range that a transaction has already read).
+
+Row-Level Lock :
+
+	It locks a specific row in a table, allowing other rows to be accessed concurrently.
+
+Page-Level Lock :
+
+	It locks a specific page (a fixed-size block of data) in the database.
+
+Table-Level Lock :
+
+	It locks an entire table. This is simple to implement but can reduce concurrency significantly.
+
+
+
+
 
